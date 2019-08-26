@@ -7,7 +7,8 @@ namespace Resource
 	// a template class, when need new types need to add in cpp, support : 
 	// <float,unsigned int>
 	// <double, unsiegned int>
-	using Model = BaseModel<float, unsigned int>;
+	//using Model = BaseModel<float, unsigned int>;
+	typedef BaseModel<float, unsigned int> Model;
 	template<class DataClass = float, class IndexClass = unsigned int>
 	class BaseModel : public Resource {
 	public:
