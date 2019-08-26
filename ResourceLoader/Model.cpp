@@ -30,14 +30,7 @@ namespace Resource
 		for (unsigned int i = 0; i < scene->mNumMeshes; ++i)
 		{
 			mesh_list_[i].loadFromAIMesh(scene->mMeshes[i]);
-			/*if (scene->mMeshes[i]->HasPositions())
-			{
-				
-				//for (int vertex_num_ = 0; vertex_num_ < scene->mMeshes[i]->mNumVertices; ++i)
-			}*/
-			//scene->mMeshes[i]
 		}
-		std::cout << "Free ";
 		importer.FreeScene();
 		state_.store(LOADED);
 		ready_.store(true);

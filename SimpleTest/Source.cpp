@@ -10,11 +10,11 @@ void load(Resource::Image & im)
 int main()
 {
 	Resource::Image image("Assets/Images/milk0001.hdr");
-	//image.loadImage();
+	image.loadImage();
 	Resource::Model model("Assets/Models/sponza.obj");
 	model.LoadModel();
-	/*Resource::BaseModel<double> doubleModel("Assets/Models/sponza.obj");
-	doubleModel.LoadModel();*/
+	Resource::BaseModel<double> doubleModel("Assets/Models/sponza.obj");
+	doubleModel.LoadModel();
 	//std::cout << image.height() << std::endl;
 	return 0;
 }
