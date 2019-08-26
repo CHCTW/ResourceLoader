@@ -1,6 +1,7 @@
 #pragma once
 #include "Resource.h"
 #include "Mesh.h"
+#include "Material.h"
 #include <string>
 namespace Resource
 { 
