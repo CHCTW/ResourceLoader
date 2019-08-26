@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "c_lexer_test", "c_lexer_test.dsp", "{34B12640-81D2-4630-82A7-476C63437CE7}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "herringbone", "herringbone.dsp", "{3D357DCF-8BFF-412F-926A-3C4A8F8303B1}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "herringbone_map", "herringbone_map.dsp", "{1EF42736-0857-479D-B56E-FCDD6366E71F}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "image_test", "image_test.dsp", "{D31C1C68-961A-4F85-BC0A-5ECD86C656F5}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "make_readme", "..\tools\make_readme.dsp", "{3FC84665-E011-45E5-825F-AEC568F7D6B1}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "resize", "resize.dsp", "{CADE468C-5CC7-412B-B764-5639586F9A80}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "stb", "stb.dsp", "{02B0E927-7C11-4EBF-9E4F-6221FC34DD5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6547C1C-BBB7-4AA4-86B9-F72E1AE9DDD0} = {C6547C1C-BBB7-4AA4-86B9-F72E1AE9DDD0}
+		{D31C1C68-961A-4F85-BC0A-5ECD86C656F5} = {D31C1C68-961A-4F85-BC0A-5ECD86C656F5}
+		{69283564-90BC-49BE-AA9D-B8F2EF13BA6F} = {69283564-90BC-49BE-AA9D-B8F2EF13BA6F}
+		{34B12640-81D2-4630-82A7-476C63437CE7} = {34B12640-81D2-4630-82A7-476C63437CE7}
+	EndProjectSection
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "stb_cpp", "stb_cpp.dsp", "{C6547C1C-BBB7-4AA4-86B9-F72E1AE9DDD0}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "stblib", "stblib.dsp", "{594DF682-CE9C-4DA6-9357-43AB54BA6572}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "stretch_test", "stretch_test.dsp", "{69283564-90BC-49BE-AA9D-B8F2EF13BA6F}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "unicode", "..\tools\unicode\unicode.dsp", "{99FF2A92-BCCA-42C3-B133-78A33985EC5B}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "vorbseek", "vorbseek\vorbseek.dsp", "{414B52A0-8C07-47B3-AC60-F5D555FCA031}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {830C9A40-75FC-4857-8E7A-63BC8CC7A5E3}
+	EndGlobalSection
+EndGlobal
