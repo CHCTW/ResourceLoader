@@ -17,9 +17,9 @@ int main()
 	//load(model);
 	//model.LoadModel();
 	std::vector<std::thread> threads;
-	for (int i = 0; i < 500; ++i)
+	for (int i = 0; i < 100; ++i)
 		threads.push_back(std::move(std::thread(load, std::ref(model),i*4)));
-	for (int i = 0; i < 500; ++i)
+	for (int i = 0; i < 100; ++i)
 	{
 		if (threads[i].joinable())
 			threads[i].join();

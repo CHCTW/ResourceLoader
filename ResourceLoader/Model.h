@@ -23,6 +23,7 @@ namespace Resource
 	private:
 		bool load();
 		std::vector<Mesh<DataClass, IndexClass>> mesh_list_;
+		std::vector<Material> material_list_;
 		std::vector<std::string> texture_list_;
 	};
 }

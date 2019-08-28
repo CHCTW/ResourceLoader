@@ -3,7 +3,6 @@
 #include <assimp\Importer.hpp>
 #include <assimp\scene.h>
 #include <assimp\postprocess.h>
-#include <assimp\mesh.h>
 #include <iostream>
 namespace Resource
 { 
@@ -31,6 +30,12 @@ namespace Resource
 		{
 			mesh_list_[i].loadFromAIMesh(scene->mMeshes[i]);
 		}
+		material_list_.resize(scene->mNumMaterials);
+		for (unsigned int i = 0; i < scene->mNumMaterials; ++i)
+		{
+			material_list_[i].loadFromAIMaterial(scene->mMaterials[i]);
+		}
+		std::cout << "Total num of materials : " << scene->mNumMaterials << std::endl;
 		importer.FreeScene();
 		state_.store(LOADED);
 		ready_.store(true);
