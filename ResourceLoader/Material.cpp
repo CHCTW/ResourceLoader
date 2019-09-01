@@ -1,6 +1,6 @@
-#include"Material.h"
+#include "Material.h"
 #include <assimp/material.h>
-#include<iostream>
+#include <iostream>
 namespace Resource
 {
 	static std::unordered_map<std::string, Material::Attributes> AiStringAttributesTable = {
@@ -121,6 +121,5 @@ namespace Resource
 				image_names_[att].push_back(tex_name.C_Str());
 			}
 		}
-
 	}
 }
