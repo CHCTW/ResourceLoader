@@ -12,7 +12,6 @@ namespace Resource
 		template<typename,typename> friend class BaseModel;
 	private:
 		void loadFromAIMesh(aiMesh* mesh);
-	public:
 		std::string name_;
 		std::vector<DataClass> positions_;
 		std::vector<std::vector<DataClass>> colors_;
@@ -23,10 +22,11 @@ namespace Resource
 		std::vector<DataClass> bitangents_;
 		unsigned int positon_channel_ = 0;
 		unsigned int material_index_ = 0;
-		std::vector<unsigned int> colors_channel_;	
+		std::vector<unsigned int> colors_channel_;
 		std::vector<unsigned int> uvws_channel_;
 		unsigned int normal_channel_ = 0;
 		unsigned int tagent_channel_ = 0;
 		unsigned int bitagent_channel_ = 0;
+	public:
 	};
 }
