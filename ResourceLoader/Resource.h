@@ -7,7 +7,7 @@ namespace Resource
 	{
 		RESOURCE,
 		IMAGE,
-		SHADER,
+		PIPELINE,
 		MODEL,
 		COUNT
 	};
