@@ -7,7 +7,7 @@
 void load(Resource::BaseModel<float>& model,unsigned int sleep_ms)
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
-	model.LoadModel();
+	model.loadModel();
 }
 int main()
 {
@@ -24,6 +24,7 @@ int main()
 		if (threads[i].joinable())
 			threads[i].join();
 	}
+
 	/*Resource::BaseModel<double> doubleModel("Assets/Models/sponza.obj");
 	doubleModel.LoadModel();*/
 	//std::cout << image.height() << std::endl;

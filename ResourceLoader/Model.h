@@ -17,7 +17,7 @@ namespace Resource
 		explicit BaseModel(std::string full_name) :Resource(MODEL) {
 			setPathName(full_name);
 		}
-		bool LoadModel() {
+		bool loadModel() {
 			return load();
 		}
 	private:

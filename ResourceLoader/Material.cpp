@@ -1,6 +1,7 @@
 #include "Material.h"
 #include <assimp/material.h>
 #include <iostream>
+#include <magic_enum.hpp>
 namespace Resource
 {
 	static std::unordered_map<std::string, Material::Attributes> AiStringAttributesTable = {
@@ -50,7 +51,7 @@ namespace Resource
 		if (AiTextureAttributesTable.find(type) != AiTextureAttributesTable.end())
 			ret = AiTextureAttributesTable[type];
 		if (ret == Material::Attributes::NONE)
-			std::cout << "Can't mapped to material attributes :" << type << std::endl;
+			std::cout << "Can't mapped to material attributes :" << magic_enum::enum_name(type) << std::endl;
 		return ret;
 	}
 	inline bool checkAiColorDefault(aiColor3D& color)

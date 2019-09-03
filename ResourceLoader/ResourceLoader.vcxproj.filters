@@ -48,10 +48,16 @@
     <ClInclude Include="Model.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
+    <ClInclude Include="DepthStencil.h">
+      <Filter>Header Files\Pipeline</Filter>
+    </ClInclude>
     <ClInclude Include="Blend.h">
       <Filter>Header Files\Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="DepthStencil.h">
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Rasterize.h">
       <Filter>Header Files\Pipeline</Filter>
     </ClInclude>
   </ItemGroup>

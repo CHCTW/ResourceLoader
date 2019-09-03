@@ -43,6 +43,5 @@ namespace Resource
 		StencilOperation stencial_depth_fail_operation_ = StencilOperation::KEEP;
 		StencilOperation stencial_pass_operation_ = StencilOperation::KEEP;
 		ComparisonFunction stencil_comparison_ = ComparisonFunction::ALWAYS;
-
 	};
 }

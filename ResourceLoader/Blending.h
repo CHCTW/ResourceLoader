@@ -5,7 +5,7 @@ namespace Resource
 	{
 		friend class Pipeline;
 	public:
-		enum BlendFactor
+		enum BlendParamteres
 		{
 			ZERO,
 			ONE,
@@ -25,7 +25,7 @@ namespace Resource
 			SRC1_ALPHA,
 			INV_SRC1_ALPHA,
 		};
-		enum BlendOperation
+		enum Operation
 		{
 			ADD,
 			SUBTRACT,
@@ -52,24 +52,7 @@ namespace Resource
 			OR_REVERSE,
 			OR_INVERTED,
 		};
-		enum ColorWrite
-		{
-			RED = 1,
-			GREEN = 2,
-			BLUE = 4,
-			ALPHA = 8,
-			ALL = 15
-		};
 	private:
-		bool blend_enable_ = false;
-		bool logic_blend__enable_ = false;
-		BlendFactor src_blend_ = ONE;
-		BlendFactor dest_blend_ = ZERO;
-		BlendOperation blend_operation = ADD;
-		BlendFactor src_blend_alpha_ = ONE;
-		BlendFactor dest_blend_alpha_ = ZERO;
-		BlendOperation blend_operation_alpha_ = ADD;
-		LogicOperation logic_operation_ = NOOP;
-		ColorWrite render_target_write_mask = ALL;
+		bool blend
 	};
 }
