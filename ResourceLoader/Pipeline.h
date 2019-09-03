@@ -5,6 +5,7 @@
 #include "DepthStencil.h"
 #include "Blend.h"
 #include "Shader.h"
+#include "Rasterize.h"
 #include <unordered_map>
 namespace Resource
 {
@@ -19,17 +20,17 @@ namespace Resource
 	public:
 		enum class Type
 		{
+			NONE,
 			GRAPHICS,
 			COMPUTE,
-			NONE,
 		};
 		enum class Primitive
 		{
+			NONE,
 			POINT,
 			LINE,
 			TRIANGLE,
 			PATCH,
-			NONE,
 		};
 		Pipeline() :Resource(PIPELINE), render_target_blends_(1){}
 		explicit Pipeline(std::string full_name) :Resource(PIPELINE), render_target_blends_(1) {
@@ -47,8 +48,9 @@ namespace Resource
 		DepthStencil depth_stencil_;
 		static const unsigned int max_rendertarget_ = 8;
 		bool alpha_to_coverage_enable_ = false;
-		bool independent_blend_enable = false;
+		bool independent_blend_enable_ = false;
 		std::vector<Blend> render_target_blends_;
 		std::unordered_map<Shader::Type, Shader> shaders_;
+		Rasterize rasterize_;
 	};
 }
