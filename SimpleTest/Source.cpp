@@ -4,6 +4,7 @@
 #include <chrono>
 #include "Image.h"
 #include "Model.h"
+#include "Pipeline.h"
 void load(Resource::BaseModel<float>& model,unsigned int sleep_ms)
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
@@ -24,7 +25,8 @@ int main()
 		if (threads[i].joinable())
 			threads[i].join();
 	}
-
+	Resource::Pipeline pipeline("Assests/Pipelines/pipline.json");
+	pipeline.loadPipeline();
 	/*Resource::BaseModel<double> doubleModel("Assets/Models/sponza.obj");
 	doubleModel.LoadModel();*/
 	//std::cout << image.height() << std::endl;

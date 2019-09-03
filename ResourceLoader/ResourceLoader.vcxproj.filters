@@ -36,9 +36,6 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pipeline.h">
-      <Filter>Header Files\Pipeline</Filter>
-    </ClInclude>
     <ClInclude Include="Material.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
@@ -58,6 +55,9 @@
       <Filter>Header Files\Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="Rasterize.h">
+      <Filter>Header Files\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipeline.h">
       <Filter>Header Files\Pipeline</Filter>
     </ClInclude>
   </ItemGroup>

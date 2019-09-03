@@ -1,7 +1,6 @@
 #pragma once
 #include "Resource.h"
 #include <string>
-#include <nlohmann/json.hpp>
 #include "DepthStencil.h"
 #include "Blend.h"
 #include "Shader.h"
@@ -32,6 +31,12 @@ namespace Resource
 			TRIANGLE,
 			PATCH,
 		};
+		enum VertexInputLayout
+		{
+			NONE_SPLIT,
+			SPLIT_ALL,
+			CUSTOM
+		};
 		Pipeline() :Resource(PIPELINE), render_target_blends_(1){}
 		explicit Pipeline(std::string full_name) :Resource(PIPELINE), render_target_blends_(1) {
 			setPathName(full_name);
@@ -44,7 +49,7 @@ namespace Resource
 		bool load();
 		Type type_ = Type::NONE;
 		Primitive render_primitive_ = Primitive::NONE;
-		nlohmann::json data_;
+		VertexInputLayout vertex_input_layout_ = NONE_SPLIT;
 		DepthStencil depth_stencil_;
 		static const unsigned int max_rendertarget_ = 8;
 		bool alpha_to_coverage_enable_ = false;
