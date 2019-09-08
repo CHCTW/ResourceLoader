@@ -9,7 +9,6 @@ namespace Resource
 	template <class DataClass, class IndexClass>
 	void Mesh<DataClass, IndexClass>::loadFromAIMesh(aiMesh* mesh)
 	{
-		std::cout << std::string(mesh->mName.data) << std::endl;
 		name_ = std::string(mesh->mName.data);
 		if (mesh->HasPositions())
 		{

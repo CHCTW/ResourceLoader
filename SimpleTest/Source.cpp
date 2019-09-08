@@ -25,7 +25,7 @@ int main()
 		if (threads[i].joinable())
 			threads[i].join();
 	}
-	Resource::Pipeline pipeline("Assests/Pipelines/pipline.json");
+	Resource::Pipeline pipeline("Assets/Pipelines/pipeline.json");
 	pipeline.loadPipeline();
 	/*Resource::BaseModel<double> doubleModel("Assets/Models/sponza.obj");
 	doubleModel.LoadModel();*/

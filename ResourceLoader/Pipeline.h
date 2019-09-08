@@ -48,7 +48,7 @@ namespace Resource
 	private:
 		bool load();
 		Type type_ = Type::NONE;
-		Primitive render_primitive_ = Primitive::NONE;
+		Primitive primitive_ = Primitive::NONE;
 		VertexInputLayout vertex_input_layout_ = NONE_SPLIT;
 		DepthStencil depth_stencil_;
 		static const unsigned int max_rendertarget_ = 8;

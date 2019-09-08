@@ -80,5 +80,11 @@
     <ClCompile Include="AssimpConvert.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="EnumConvert.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Pipeline</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

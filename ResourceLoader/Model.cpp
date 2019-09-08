@@ -35,7 +35,6 @@ namespace Resource
 		{
 			material_list_[i].loadFromAIMaterial(scene->mMaterials[i]);
 		}
-		std::cout << "Total num of materials : " << scene->mNumMaterials << std::endl;
 		importer.FreeScene();
 		state_.store(LOADED);
 		ready_.store(true);

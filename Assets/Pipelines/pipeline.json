@@ -1,3 +1,17 @@
 {
-  "Type" :  "GRAPHICS"
+  "Type": "GRAPHICS",
+  "Primitive": "TRIANGLE",
+  "VertexInputLayout": "NONE_SPLIT",
+  "Shaders": [
+    {
+      "Type": "VERTEX",
+      "FullPathName": "Assets/Shaders/SimpleDraw.hlsl",
+      "EntryPoint": "VSMain"
+    },
+    {
+      "Type": "PIXEL",
+      "FullPathName": "Assets/Shaders/SimpleDraw.hlsl",
+      "EntryPoint": "PSMain"
+    }
+  ]
 }
