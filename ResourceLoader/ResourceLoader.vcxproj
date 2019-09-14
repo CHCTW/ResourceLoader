@@ -22,6 +22,8 @@
     <ClInclude Include="Blend.h" />
     <ClInclude Include="DepthStencil.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="JsonUtility.hpp" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />

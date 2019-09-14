@@ -1,6 +1,7 @@
 #include "Blend.h"
 #include <rapidjson/document.h>
 #include "EnumConvert.hpp"
+#include "JsonUtility.hpp"
 namespace Resource
 {
 	bool Blend::loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json)
@@ -8,11 +9,11 @@ namespace Resource
 		bool ret = true;
 		if (json.HasMember("BlendEnable"))
 		{
-			blend_enable_ = json["BlendEnable"].GetBool();
+			ret&=getJsonValue("BlendEnable", json, blend_enable_);
 		}
 		if (json.HasMember("LogicBlendEnable"))
 		{
-			logic_blend_enable_ = json["LogicBlendEnable"].GetBool();
+			ret &= getJsonValue("LogicBlendEnable", json, logic_blend_enable_);
 		}
 		if (json.HasMember("SourceBlend"))
 		{

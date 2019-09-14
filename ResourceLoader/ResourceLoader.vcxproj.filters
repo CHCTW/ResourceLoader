@@ -66,6 +66,12 @@
     <ClInclude Include="Work.hpp">
       <Filter>Header Files\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="JsonUtility.hpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp">

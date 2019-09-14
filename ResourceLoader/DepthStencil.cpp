@@ -1,6 +1,7 @@
 #include "DepthStencil.h"
 #include <rapidjson/document.h>
 #include "EnumConvert.hpp"
+#include "JsonUtility.hpp"
 namespace Resource
 {
 	bool DepthStencil::loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json)
@@ -8,7 +9,7 @@ namespace Resource
 		bool ret = true;
 		if (json.HasMember("DepthEnable"))
 		{
-			depth_enable_ = json["DepthEnable"].GetBool();
+			ret &= getJsonValue("DepthEnable", json, depth_enable_);
 		}
 		if (json.HasMember("DepthWriteMask"))
 		{
@@ -20,15 +21,15 @@ namespace Resource
 		}
 		if (json.HasMember("StencilEnable"))
 		{
-			stencil_enable_ = json["StencilEnable"].GetBool();
+			ret &= getJsonValue("StencilEnable", json, stencil_enable_);
 		}
 		if (json.HasMember("StencilReadMask"))
 		{
-			stencil_read_mask_ = static_cast<unsigned char>(json["StencilReadMask"].GetUint());
+			ret &= getJsonValue("StencilReadMask", json, stencil_read_mask_);
 		}
 		if (json.HasMember("StencilWriteMask"))
 		{
-			stencil_read_mask_ = static_cast<unsigned char>(json["StencilWriteMask"].GetUint());
+			ret &= getJsonValue("StencilWriteMask", json, stencil_write_mask_);
 		}
 		if (json.HasMember("StencilFailOperation"))
 		{

@@ -6,6 +6,7 @@ namespace Resource
 {
 	// a template class, when need new types need to add in cpp, support : 
 	// <float,unsignied int>
+	// <double,unsignied int>
 	template <class DataClass = float, class IndexClass = unsigned int>
 	class Mesh
 	{

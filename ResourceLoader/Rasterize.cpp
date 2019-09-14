@@ -1,6 +1,7 @@
 #include "Rasterize.h"
 #include "EnumConvert.hpp"
 #include "rapidjson/document.h"
+#include "JsonUtility.hpp"
 namespace Resource
 {
 	bool Rasterize::loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json)
@@ -16,39 +17,39 @@ namespace Resource
 		}
 		if (json.HasMember("FrontCounterClockwise"))
 		{
-			fron_counter_clockwise_ = json["FrontCounterClockwise"].GetBool();
+			ret &= getJsonValue("FrontCounterClockwise", json, fron_counter_clockwise_);
 		}
 		if (json.HasMember("DepthBias"))
 		{
-			depth_bias_ = json["DepthBias"].GetInt();
+			ret &= getJsonValue("DepthBias", json, depth_bias_);
 		}
 		if (json.HasMember("DepthBiasClamp"))
 		{
-			depth_bias_clamp_ = json["DepthBiasClamp"].GetFloat();
+			ret &= getJsonValue("DepthBiasClamp", json, depth_bias_clamp_);
 		}
 		if (json.HasMember("SlopeScaledDepthBias"))
 		{
-			slope_scaled_depth_bias_ = json["SlopeScaledDepthBias"].GetFloat();
+			ret &= getJsonValue("SlopeScaledDepthBias", json, slope_scaled_depth_bias_);
 		}
 		if (json.HasMember("DepthClipEnable"))
 		{
-			depth_clip_enable_ = json["DepthClipEnable"].GetBool();
+			ret &= getJsonValue("DepthClipEnable", json, depth_clip_enable_);
 		}
 		if (json.HasMember("MultisampleEnable"))
 		{
-			multisample_enable_ = json["MultisampleEnable"].GetBool();
+			ret &= getJsonValue("MultisampleEnable", json, multisample_enable_);
 		}
 		if (json.HasMember("AntialiasedLineEnable"))
 		{
-			antialiased_line_enable_ = json["AntialiasedLineEnable"].GetBool();
+			ret &= getJsonValue("AntialiasedLineEnable", json, antialiased_line_enable_);
 		}
 		if (json.HasMember("ForcedSampleCount"))
 		{
-			forced_sample_count_ = json["ForcedSampleCount"].GetInt();
+			ret &= getJsonValue("ForcedSampleCount", json, forced_sample_count_);
 		}
 		if (json.HasMember("ConservativeRaster"))
 		{
-			conservative_raster_ = json["ConservativeRaster"].GetBool();
+			ret &= getJsonValue("ConservativeRaster", json, conservative_raster_);
 		}
 		return ret;
 	}

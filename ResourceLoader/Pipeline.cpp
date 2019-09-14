@@ -6,6 +6,7 @@
 #include <rapidjson/rapidjson.h>
 #include "rapidjson/document.h"
 #include <nlohmann/json.hpp>
+#include "JsonUtility.hpp"
 namespace Resource
 {
 	bool Pipeline::loadResource()
@@ -64,6 +65,14 @@ namespace Resource
 					ret &= blends_[i].loadFromRapidJson(blends[i]);
 				}
 			}
+		}
+		if (doc.HasMember("AlphaToCoverageEnable"))
+		{
+			ret &= getJsonValue("AlphaToCoverageEnable", doc, alpha_to_coverage_enable_);
+		}
+		if (doc.HasMember("IndependentBlendEnable"))
+		{
+			ret &= getJsonValue("IndependentBlendEnable", doc, independent_blend_enable_);
 		}
 		return ret;
 	}
