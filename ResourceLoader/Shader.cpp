@@ -1,5 +1,5 @@
 #include "Shader.h"
-#include "EnumConvert.cpp"
+#include "EnumConvert.hpp"
 #include "rapidjson/document.h"
 #include <sstream>
 #include <fstream>

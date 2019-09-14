@@ -2,7 +2,7 @@
 #include <iostream>
 #include <assimp\mesh.h>
 #include <typeinfo> 
-#include "AssimpConvert.cpp"
+#include "AssimpConvert.hpp"
 #include "Material.h"
 namespace Resource
 {

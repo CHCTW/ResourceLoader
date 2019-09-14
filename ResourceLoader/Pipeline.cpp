@@ -1,6 +1,6 @@
 #include "Pipeline.h"
 #include <magic_enum.hpp>
-#include "EnumConvert.cpp"
+#include "EnumConvert.hpp"
 #include <fstream>
 #include <iostream>
 #include <rapidjson/rapidjson.h>
@@ -10,6 +10,7 @@ namespace Resource
 {
 	bool Pipeline::load()
 	{
+		bool ret = true;
 		std::ifstream ifs(full_path_name_);
 		if (!ifs)
 		{
@@ -18,14 +19,13 @@ namespace Resource
 		}
 		std::string file_contents{ std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>() };
 		rapidjson::Document doc;
-		//rapidjson::Value
 		doc.Parse(file_contents.c_str());
 		if(doc.HasMember("Type"))
-			convertEnum(std::string(doc["Type"].GetString()), type_);
+			ret&=convertEnum(std::string(doc["Type"].GetString()), type_);
 		if (doc.HasMember("Primitive"))
-			convertEnum(std::string(doc["Primitive"].GetString()), primitive_);
+			ret &= convertEnum(std::string(doc["Primitive"].GetString()), primitive_);
 		if (doc.HasMember("VertexInputLayout"))
-			convertEnum(std::string(doc["VertexInputLayout"].GetString()), vertex_input_layout_);
+			ret &= convertEnum(std::string(doc["VertexInputLayout"].GetString()), vertex_input_layout_);
 		if (doc.HasMember("Shaders"))
 		{
 			rapidjson::Value& shaders = doc["Shaders"];
@@ -38,13 +38,34 @@ namespace Resource
 						Shader::Type shader_type = Shader::Type::NONE;
 						if (convertEnum(std::string(shader["Type"].GetString()), shader_type))
 						{
-							shaders_[shader_type].loadFromRapidJson(shader);
+							ret &= shaders_[shader_type].loadFromRapidJson(shader);
 						}	
 					}
 				}
 			}
 		}
-		return true;
+		if (doc.HasMember("DepthStencil"))
+		{
+			ret &= depth_stencil_.loadFromRapidJson(doc["DepthStencil"]);
+		}
+		if (doc.HasMember("Rasterize"))
+		{
+			ret &= rasterize_.loadFromRapidJson(doc["Rasterize"]);
+		}
+		if (doc.HasMember("Blends"))
+		{
+			rapidjson::Value& blends = doc["Blends"];
+			if (blends.IsArray())
+			{
+				blends_.resize(blends.Size());
+
+				for (unsigned int i = 0; i < blends.Size(); ++i)
+				{
+					ret &= blends_[i].loadFromRapidJson(blends[i]);
+				}
+			}
+		}
+		return ret;
 	}
 
 }

@@ -31,13 +31,16 @@
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AssimpConvert.cpp" />
+    <ClCompile Include="AssimpConvert.hpp" />
+    <ClCompile Include="Blend.cpp" />
+    <ClCompile Include="DepthStencil.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Pipeline.cpp" />
-    <ClCompile Include="EnumConvert.cpp" />
+    <ClCompile Include="EnumConvert.hpp" />
+    <ClCompile Include="Rasterize.cpp" />
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -13,5 +13,56 @@
       "FullPathName": "Assets/Shaders/SimpleDraw.hlsl",
       "EntryPoint": "PSMain"
     }
+  ],
+  "DepthStencil": {
+    "DepthEnable": true,
+    "DepthWriteMask": "ALL",
+    "DepthComparison": "LESS",
+    "StencilEnable": false,
+    "StencilReadMask": 255,
+    "StencilWriteMask": 255,
+    "StencilFailOperation": "KEEP",
+    "StencilDepthFailOperation": "KEEP",
+    "StencilPassOperation": "KEEP",
+    "StencilComparison": "ALWAYS"
+  },
+  "Rasterize": {
+    "Fill": "SOLID",
+    "Cull": "FRONT",
+    "FrontCounterClockwise": false,
+    "DepthBias": 0,
+    "DepthBiasClamp": 0.0,
+    "SlopeScaledDepthBias": 0.0,
+    "DepthClipEnable": true,
+    "MultisampleEnable": false,
+    "AntialiasedLineEnable": false,
+    "ForcedSampleCount": 0,
+    "ConservativeRaster": false
+  },
+  "Blends": [
+    {
+      "BlendEnable": false,
+      "LogicBlendEnable": false,
+      "SourceBlend": "ONE",
+      "DestinationBlend": "ZERO",
+      "BlendOperation": "ADD",
+      "SourceBlendAlpha": "ONE",
+      "DestinationBlendAlpha": "ZERO",
+      "BlendOperationAlpha": "ADD",
+      "LogicOperation": "NOOP",
+      "RenderTargetWriteMask": "ALL"
+    },
+    {
+      "BlendEnable": false,
+      "LogicBlendEnable": true,
+      "SourceBlend": "ONE",
+      "DestinationBlend": "ZERO",
+      "BlendOperation": "ADD",
+      "SourceBlendAlpha": "ONE",
+      "DestinationBlendAlpha": "ZERO",
+      "BlendOperationAlpha": "ADD",
+      "LogicOperation": "NOOP",
+      "RenderTargetWriteMask": "ALL"
+    }
   ]
 }

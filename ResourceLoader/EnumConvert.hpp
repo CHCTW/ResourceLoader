@@ -4,7 +4,7 @@
 namespace Resource
 {
 	template<class ValueClass, class EnumClass>
-	inline bool convertEnum(ValueClass&& value, EnumClass&& result)
+	inline bool convertEnum(const ValueClass&& value, EnumClass&& result)
 	{
 		auto temp = magic_enum::enum_cast<EnumClass>(value);
 		if (temp.has_value())

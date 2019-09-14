@@ -37,8 +37,8 @@ namespace Resource
 			SPLIT_ALL,
 			CUSTOM
 		};
-		Pipeline() :Resource(PIPELINE), render_target_blends_(1){}
-		explicit Pipeline(std::string full_name) :Resource(PIPELINE), render_target_blends_(1) {
+		Pipeline() :Resource(PIPELINE), blends_(1){}
+		explicit Pipeline(std::string full_name) :Resource(PIPELINE), blends_(1) {
 			setPathName(full_name);
 		}
 		bool loadPipeline()
@@ -54,7 +54,7 @@ namespace Resource
 		static const unsigned int max_rendertarget_ = 8;
 		bool alpha_to_coverage_enable_ = false;
 		bool independent_blend_enable_ = false;
-		std::vector<Blend> render_target_blends_;
+		std::vector<Blend> blends_;
 		std::unordered_map<Shader::Type, Shader> shaders_;
 		Rasterize rasterize_;
 	};

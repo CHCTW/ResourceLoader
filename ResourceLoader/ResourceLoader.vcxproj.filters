@@ -77,13 +77,22 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="AssimpConvert.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="EnumConvert.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthStencil.cpp">
+      <Filter>Source Files\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Rasterize.cpp">
+      <Filter>Source Files\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumConvert.hpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="AssimpConvert.hpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Blend.cpp">
       <Filter>Source Files\Pipeline</Filter>
     </ClCompile>
   </ItemGroup>

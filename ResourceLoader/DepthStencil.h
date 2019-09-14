@@ -1,4 +1,14 @@
 #pragma once
+#include <string>
+// The pay for using delceartion complex class, wish when nlohmnjson is back, it won't get so ugly
+namespace rapidjson
+{
+	class CrtAllocator;
+	template<typename T> class MemoryPoolAllocator;
+	template<typename T> struct UTF8;
+	template <typename Encoding, typename Allocator>
+	class GenericValue;
+}
 namespace Resource
 {
 	class DepthStencil
@@ -33,6 +43,7 @@ namespace Resource
 			DECR,
 		};
 	private:
+		bool loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json);
 		bool depth_enable_ = true;
 		DepthWriteMask depth_write_mask_ = DepthWriteMask::ALL;
 		ComparisonFunction depth_comparison_ = ComparisonFunction::LESS;
