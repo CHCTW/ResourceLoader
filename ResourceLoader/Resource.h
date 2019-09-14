@@ -9,6 +9,7 @@ namespace Resource
 		IMAGE,
 		PIPELINE,
 		MODEL,
+		FILE,
 		COUNT
 	};
 	enum State
@@ -18,6 +19,8 @@ namespace Resource
 		LOADED,
 		LOAD_FAIL
 	};
+	// To add new resource class, inherit from Resource and implement the loadResource method
+	// The class should be thread safe
 	class Resource
 	{
 	public:

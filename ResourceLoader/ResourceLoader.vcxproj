@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Blend.h" />
     <ClInclude Include="DepthStencil.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="JsonUtility.hpp" />
     <ClInclude Include="Manager.h" />
@@ -37,6 +38,7 @@
     <ClCompile Include="AssimpConvert.hpp" />
     <ClCompile Include="Blend.cpp" />
     <ClCompile Include="DepthStencil.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />

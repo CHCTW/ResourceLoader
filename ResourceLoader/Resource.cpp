@@ -8,7 +8,7 @@ namespace Resource
 		if (!state_.compare_exchange_strong(state, LOADING))
 		{
 			std::cout << full_path_name_ << " : is already loading or loaded " << std::endl;
-			return LOADING;
+			return state_.load();
 		}
 		if (!loadResource())
 		{
