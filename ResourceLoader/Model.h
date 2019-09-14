@@ -17,11 +17,8 @@ namespace Resource
 		explicit BaseModel(std::string full_name) :Resource(MODEL) {
 			setPathName(full_name);
 		}
-		bool loadModel() {
-			return load();
-		}
 	private:
-		bool load();
+		bool loadResource();
 		std::vector<Mesh<DataClass, IndexClass>> mesh_list_;
 		std::vector<Material> material_list_;
 		std::vector<std::string> texture_list_;

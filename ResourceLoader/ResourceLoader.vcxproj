@@ -29,6 +29,7 @@
     <ClInclude Include="Rasterize.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Work.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssimpConvert.hpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="Pipeline.cpp" />
     <ClCompile Include="EnumConvert.hpp" />
     <ClCompile Include="Rasterize.cpp" />
+    <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -26,10 +26,6 @@ namespace Resource
 		{
 			depth_bias_clamp_ = json["DepthBiasClamp"].GetFloat();
 		}
-		if (json.HasMember("DepthBiasClamp"))
-		{
-			depth_bias_clamp_ = json["DepthBiasClamp"].GetFloat();
-		}
 		if (json.HasMember("SlopeScaledDepthBias"))
 		{
 			slope_scaled_depth_bias_ = json["SlopeScaledDepthBias"].GetFloat();

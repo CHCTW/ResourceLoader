@@ -30,9 +30,10 @@ namespace Resource
 			state_.store(UNLOAD);
 			ready_.store(false);
 		}
+		bool load();
 		virtual ~Resource() { release(); }
 	protected:
-		virtual bool load() = 0;
+		virtual bool loadResource() = 0;
 		std::string full_path_name_;
 		std::atomic<State> state_;
 		std::atomic<bool> ready_;

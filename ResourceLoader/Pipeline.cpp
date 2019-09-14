@@ -8,7 +8,7 @@
 #include <nlohmann/json.hpp>
 namespace Resource
 {
-	bool Pipeline::load()
+	bool Pipeline::loadResource()
 	{
 		bool ret = true;
 		std::ifstream ifs(full_path_name_);

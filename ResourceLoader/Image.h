@@ -14,10 +14,6 @@ namespace Resource
 		~Image() {
 			release();
 		}
-		bool loadImage()
-		{
-			return load();
-		}
 		const std::vector<unsigned char>&  getData() const { return data_; }
 		unsigned int width() const { return static_cast<unsigned int>(width_); }
 		unsigned int height() const { return static_cast<unsigned int>(height_); }
@@ -33,6 +29,6 @@ namespace Resource
 		int mips_;
 		int channels_;
 		bool hdr_;
-		bool load();
+		bool loadResource();
 	};
 }

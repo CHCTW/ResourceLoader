@@ -16,7 +16,7 @@ namespace Resource
 		}
 		if (json.HasMember("DepthComparison"))
 		{
-			ret &= convertEnum(std::string(json["DepthWriteMask"].GetString()), depth_write_mask_);
+			ret &= convertEnum(std::string(json["DepthComparison"].GetString()), depth_comparison_);
 		}
 		if (json.HasMember("StencilEnable"))
 		{

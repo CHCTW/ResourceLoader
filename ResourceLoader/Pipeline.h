@@ -41,12 +41,8 @@ namespace Resource
 		explicit Pipeline(std::string full_name) :Resource(PIPELINE), blends_(1) {
 			setPathName(full_name);
 		}
-		bool loadPipeline()
-		{
-			return load();
-		}
 	private:
-		bool load();
+		bool loadResource();
 		Type type_ = Type::NONE;
 		Primitive primitive_ = Primitive::NONE;
 		VertexInputLayout vertex_input_layout_ = NONE_SPLIT;

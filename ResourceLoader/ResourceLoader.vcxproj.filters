@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Utility">
       <UniqueIdentifier>{2835bff3-afac-459e-be8e-db67f2a0ec9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Manager">
+      <UniqueIdentifier>{3b111448-d28b-4e54-8d48-c282f8e0d57e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Image.h">
@@ -59,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="Pipeline.h">
       <Filter>Header Files\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Work.hpp">
+      <Filter>Header Files\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="Blend.cpp">
       <Filter>Source Files\Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

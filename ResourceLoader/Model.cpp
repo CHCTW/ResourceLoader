@@ -7,14 +7,9 @@
 namespace Resource
 { 
 	template<class DataClass, class IndexClass>
-	bool BaseModel<DataClass, IndexClass>::load()
+	bool BaseModel<DataClass, IndexClass>::loadResource()
 	{
 		State state(UNLOAD);
-		if (!state_.compare_exchange_strong(state, LOADING))
-		{
-			std::cout << full_path_name_ << " : is already loading or loaded " << std::endl;
-			return false;
-		}
 		Assimp::Importer importer;
 		importer.ReadFile(full_path_name_.c_str(), aiProcess_CalcTangentSpace | aiProcess_Triangulate | aiProcess_FlipUVs);
 		aiScene const* scene = importer.GetScene();
@@ -22,7 +17,6 @@ namespace Resource
 		{
 			std::cout << full_path_name_ << ": can't load model " << std::endl;
 			importer.FreeScene();
-			state_.store(LOAD_FAIL);
 			return false;
 		}
 		mesh_list_.resize(scene->mNumMeshes);
@@ -36,8 +30,6 @@ namespace Resource
 			material_list_[i].loadFromAIMaterial(scene->mMaterials[i]);
 		}
 		importer.FreeScene();
-		state_.store(LOADED);
-		ready_.store(true);
 		return true;
 	}
 	template class BaseModel<float, unsigned int>;
