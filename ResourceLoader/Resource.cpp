@@ -2,22 +2,22 @@
 #include <iostream>
 namespace Resource
 {
-	bool Resource::load()
+	State Resource::load()
 	{
 		State state(UNLOAD);
 		if (!state_.compare_exchange_strong(state, LOADING))
 		{
 			std::cout << full_path_name_ << " : is already loading or loaded " << std::endl;
-			return false;
+			return LOADING;
 		}
 		if (!loadResource())
 		{
 			state_.store(LOAD_FAIL);
 			std::cout << full_path_name_ << " : load fail" << std::endl;
-			return false;
+			return LOAD_FAIL;
 		}
 		state_.store(LOADED);
 		ready_.store(true);
-		return true;
+		return LOADED;
 	}
 }

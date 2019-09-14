@@ -30,7 +30,7 @@ namespace Resource
 			state_.store(UNLOAD);
 			ready_.store(false);
 		}
-		bool load();
+		State load();
 		virtual ~Resource() { release(); }
 	protected:
 		virtual bool loadResource() = 0;
