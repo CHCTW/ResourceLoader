@@ -2,6 +2,7 @@
 #include "Resource.h"
 #include <vector>
 #include <string>
+#include <iostream>
 namespace Resource
 {
 	class Image : public Resource
@@ -20,6 +21,7 @@ namespace Resource
 		unsigned int elementSize() const { return static_cast<unsigned int>(elemnt_size_); }
 		unsigned int channel() const{return static_cast<unsigned int>(channels_);}
 		bool ready() const { return ready_.load(); }
+		static const std::string default_folder_path_;
 	private:
 		std::vector<unsigned char> data_;
 		int width_;

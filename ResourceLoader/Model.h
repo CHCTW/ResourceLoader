@@ -17,6 +17,7 @@ namespace Resource
 		explicit BaseModel(std::string full_name) :Resource(MODEL) {
 			setPathName(full_name);
 		}
+		static const std::string default_folder_path_;
 	private:
 		bool loadResource();
 		std::vector<Mesh<DataClass, IndexClass>> mesh_list_;

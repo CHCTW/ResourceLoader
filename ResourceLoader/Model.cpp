@@ -7,6 +7,8 @@
 namespace Resource
 { 
 	template<class DataClass, class IndexClass>
+	const std::string BaseModel<DataClass, IndexClass>::default_folder_path_ = "Assets/Models/";
+	template<class DataClass, class IndexClass>
 	bool BaseModel<DataClass, IndexClass>::loadResource()
 	{
 		State state(UNLOAD);

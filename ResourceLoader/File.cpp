@@ -3,6 +3,7 @@
 #include <iostream>
 namespace Resource
 {
+	const std::string File::default_folder_path_ = "";
 	bool File::loadResource()
 	{
 		std::ifstream ifs(full_path_name_);

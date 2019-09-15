@@ -2,12 +2,15 @@
 #include <iostream>
 namespace Resource
 {
+	std::string Resource::getName() const
+	{
+		return full_path_name_;
+	}
 	State Resource::load()
 	{
 		State state(UNLOAD);
 		if (!state_.compare_exchange_strong(state, LOADING))
 		{
-			std::cout << full_path_name_ << " : is already loading or loaded " << std::endl;
 			return state_.load();
 		}
 		if (!loadResource())

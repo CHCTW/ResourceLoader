@@ -40,6 +40,7 @@
     <ClCompile Include="DepthStencil.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />

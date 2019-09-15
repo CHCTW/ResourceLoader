@@ -4,12 +4,15 @@
 #include <stb/stb_image.h>
 namespace Resource
 {
+	const std::string Image::default_folder_path_ = "Assets/Images/";
 	bool Image::loadResource()
 	{
 		void* temp(nullptr);
 		if (full_path_name_[full_path_name_.size() - 3] == 'h' && full_path_name_[full_path_name_.size() - 2] == 'd' && full_path_name_[full_path_name_.size() - 2] == 'r') // hdr file
 		{
 			float* temphdr = stbi_loadf(full_path_name_.c_str(), &width_, &height_, &channels_, 0);
+			if (!temphdr)
+				return false;
 			hdr_ = true;
 			temp = static_cast<void*>(temphdr);
 			elemnt_size_ = channels_*4;

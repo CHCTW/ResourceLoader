@@ -31,6 +31,9 @@
     <Filter Include="Header Files\Manager">
       <UniqueIdentifier>{3b111448-d28b-4e54-8d48-c282f8e0d57e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Manager">
+      <UniqueIdentifier>{fbd40a53-d7be-4908-9147-d85bb0ea1df9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Image.h">
@@ -115,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="File.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files\Manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

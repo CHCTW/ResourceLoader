@@ -35,6 +35,15 @@ namespace Resource
 		}
 		State load();
 		virtual ~Resource() { release(); }
+		Resource& operator=(Resource const & ref)
+		{
+			full_path_name_ = ref.full_path_name_;
+			state_.store(ref.state_.load());
+			ready_.store(ref.ready_.load());
+			type_ = ref.type_;
+			return *this;
+		}
+		std::string getName() const;
 	protected:
 		virtual bool loadResource() = 0;
 		std::string full_path_name_;

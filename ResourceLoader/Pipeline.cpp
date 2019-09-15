@@ -9,6 +9,7 @@
 #include "JsonUtility.hpp"
 namespace Resource
 {
+	const std::string Pipeline::default_folder_path_ = "Assets/Pipelines/";
 	bool Pipeline::loadResource()
 	{
 		bool ret = true;

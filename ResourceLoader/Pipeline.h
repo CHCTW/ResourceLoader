@@ -38,9 +38,10 @@ namespace Resource
 			CUSTOM
 		};
 		Pipeline() :Resource(PIPELINE), blends_(1){}
-		explicit Pipeline(std::string full_name) :Resource(PIPELINE), blends_(1) {
+		Pipeline(std::string full_name) :Resource(PIPELINE), blends_(1) {
 			setPathName(full_name);
 		}
+		static const std::string default_folder_path_;
 	private:
 		bool loadResource();
 		Type type_ = Type::NONE;
