@@ -12,6 +12,10 @@ namespace Resource
 		File() :Resource(Type::FILE) {
 		}
 		static const std::string default_folder_path_;
+		const std::string& getData() const
+		{
+			return data_;
+		}
 	private:
 		bool loadResource();
 		std::string data_;

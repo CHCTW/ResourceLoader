@@ -35,6 +35,38 @@ namespace Resource
 			BACK,
 			BOTH,
 		};
+		const std::unordered_map < Attributes, std::vector<std::string>>& getAllImageNames() const
+		{
+			return image_names_;
+		}
+		const std::unordered_map < Attributes, std::vector<float>>& getAllValues() const
+		{
+			return values_;
+		}
+		bool isTransparency() const
+		{
+			return transparency_;
+		}
+		bool isWireFrame() const
+		{
+			return wireframe_;
+		}
+		Face getFace() const
+		{
+			return face_;
+		}
+		std::string getName() const
+		{
+			return name_;
+		}
+		const std::vector<std::string>& getImageList(Attributes attribute) const
+		{
+			return image_names_.at(attribute);
+		}
+		const std::vector<float>& getValueList(Attributes attribute) const
+		{
+			return values_.at(attribute);
+		}
 	private:
 		std::unordered_map < Attributes, std::vector<std::string>> image_names_;
 		std::unordered_map < Attributes, std::vector<float>> values_;

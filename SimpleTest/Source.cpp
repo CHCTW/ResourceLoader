@@ -15,8 +15,9 @@ void load(Resource::Resource& resource,unsigned int sleep_ms)
 template<class ResourceClass>
 void managerload(Resource::Manager<ResourceClass>& manager, unsigned int sleep_ms)
 {
-	manager.GetMutable("sponza.obj", [](std::shared_ptr<const ResourceClass> resource) {
-		std::cout<<"Thread calling : " << resource->getName() << std::endl; });
+	manager.Get("sponza.obj", [](std::shared_ptr<const ResourceClass> resource) {
+		std::cout<<"Thread calling : " << resource->getName() << std::endl;
+		});
 }
 int main()
 {

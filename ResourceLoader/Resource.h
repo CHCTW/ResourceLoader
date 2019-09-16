@@ -44,6 +44,18 @@ namespace Resource
 			return *this;
 		}
 		std::string getName() const;
+		Type getType() const
+		{
+			return type_;
+		}
+		State getState() const
+		{
+			return state_.load();
+		}
+		bool isReady() const
+		{
+			return ready_.load();
+		}
 	protected:
 		virtual bool loadResource() = 0;
 		std::string full_path_name_;

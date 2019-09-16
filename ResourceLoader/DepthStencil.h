@@ -42,6 +42,46 @@ namespace Resource
 			INCR,
 			DECR,
 		};
+		bool isDepthEnable() const
+		{
+			return depth_enable_;
+		}
+		DepthWriteMask getDepthWriteMask() const
+		{
+			return depth_write_mask_;
+		}
+		ComparisonFunction getDepthComparison() const
+		{
+			return depth_comparison_;
+		}
+		bool isStencilEnable() const
+		{
+			return stencil_enable_;
+		}
+		unsigned char getStencilReadMask() const
+		{
+			return stencil_read_mask_;
+		}
+		unsigned char getStencilWriteMask() const
+		{
+			return stencil_write_mask_;
+		}
+		StencilOperation getStencilFailOperation() const
+		{
+			return stencil_fail_operation_;
+		}
+		StencilOperation getStencilDepthFailOperation() const
+		{
+			return stencil_depth_fail_operation_;
+		}
+		StencilOperation getStencilPassOperation() const
+		{
+			return stencil_pass_operation_;
+		}
+		ComparisonFunction getStencilComparison() const
+		{
+			return stencil_comparison_;
+		}
 	private:
 		bool loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json);
 		bool depth_enable_ = true;
@@ -50,9 +90,9 @@ namespace Resource
 		bool stencil_enable_ = false;
 		unsigned char stencil_read_mask_ = 0xff;
 		unsigned char stencil_write_mask_ = 0xff;
-		StencilOperation stencial_fail_operation_ = StencilOperation::KEEP;
-		StencilOperation stencial_depth_fail_operation_ = StencilOperation::KEEP;
-		StencilOperation stencial_pass_operation_ = StencilOperation::KEEP;
+		StencilOperation stencil_fail_operation_ = StencilOperation::KEEP;
+		StencilOperation stencil_depth_fail_operation_ = StencilOperation::KEEP;
+		StencilOperation stencil_pass_operation_ = StencilOperation::KEEP;
 		ComparisonFunction stencil_comparison_ = ComparisonFunction::ALWAYS;
 	};
 }

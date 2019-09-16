@@ -18,6 +18,18 @@ namespace Resource
 			setPathName(full_name);
 		}
 		static const std::string default_folder_path_;
+		const std::vector<Mesh<DataClass, IndexClass>>& getMeshList() const
+		{
+			return mesh_list_;
+		}
+		const std::vector<Material>& getMaterialList() const
+		{
+			return material_list_;
+		}
+		const std::vector<std::string>& getTextureList() const
+		{
+			return texture_list_;
+		}
 	private:
 		bool loadResource();
 		std::vector<Mesh<DataClass, IndexClass>> mesh_list_;

@@ -42,6 +42,42 @@ namespace Resource
 			setPathName(full_name);
 		}
 		static const std::string default_folder_path_;
+		Type getType() const
+		{
+			return type_;
+		}
+		Primitive getPrimitive() const
+		{
+			return primitive_;
+		}
+		VertexInputLayout getVertexInputLayout() const
+		{
+			return vertex_input_layout_;
+		}
+		const DepthStencil& getDepthStencil() const
+		{
+			return depth_stencil_;
+		}
+		bool isAlphaToCoverageEnable() const
+		{
+			return alpha_to_coverage_enable_;
+		}
+		bool isIndependentBlendEnable() const
+		{
+			return independent_blend_enable_;
+		}
+		const std::vector<Blend>& getBlends() const
+		{
+			return blends_;
+		}
+		const std::unordered_map<Shader::Type, Shader>& getAllShaders() const
+		{
+			return shaders_;
+		}
+		const Rasterize& getRasterize() const
+		{
+			return rasterize_;
+		}
 	private:
 		bool loadResource();
 		Type type_ = Type::NONE;

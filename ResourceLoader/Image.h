@@ -16,11 +16,10 @@ namespace Resource
 			release();
 		}
 		const std::vector<unsigned char>&  getData() const { return data_; }
-		unsigned int width() const { return static_cast<unsigned int>(width_); }
-		unsigned int height() const { return static_cast<unsigned int>(height_); }
-		unsigned int elementSize() const { return static_cast<unsigned int>(elemnt_size_); }
-		unsigned int channel() const{return static_cast<unsigned int>(channels_);}
-		bool ready() const { return ready_.load(); }
+		unsigned int getWidth() const { return static_cast<unsigned int>(width_); }
+		unsigned int getHeight() const { return static_cast<unsigned int>(height_); }
+		unsigned int getElementSize() const { return static_cast<unsigned int>(elemnt_size_); }
+		unsigned int getChannel() const{return static_cast<unsigned int>(channels_);}
 		static const std::string default_folder_path_;
 	private:
 		std::vector<unsigned char> data_;

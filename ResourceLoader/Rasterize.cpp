@@ -17,7 +17,7 @@ namespace Resource
 		}
 		if (json.HasMember("FrontCounterClockwise"))
 		{
-			ret &= getJsonValue("FrontCounterClockwise", json, fron_counter_clockwise_);
+			ret &= getJsonValue("FrontCounterClockwise", json, front_counter_clockwise_);
 		}
 		if (json.HasMember("DepthBias"))
 		{

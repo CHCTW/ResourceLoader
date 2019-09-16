@@ -25,6 +25,22 @@ namespace Resource
 			DOMIAN,
 			NONE
 		};
+		Type getType() const
+		{
+			return type_;
+		}
+		std::string getFullPathName() const
+		{
+			return full_path_name_;
+		}
+		const std::string& getData() const
+		{
+			return data_;
+		}
+		std::string getEntryPoint() const
+		{
+			return entry_point_;
+		}
 	private:
 		bool loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json);
 		Type type_;

@@ -13,7 +13,7 @@ namespace Resource
 		if (mesh->HasPositions())
 		{
 			AI3DVectortoDataClass(positions_, mesh->mVertices, mesh->mNumVertices);
-			positon_channel_ = 3;
+			position_channel_ = 3;
 		}
 		if (mesh->HasFaces())
 		{
@@ -28,8 +28,8 @@ namespace Resource
 		{
 			AI3DVectortoDataClass(tangents_, mesh->mTangents, mesh->mNumVertices);
 			AI3DVectortoDataClass(bitangents_, mesh->mBitangents, mesh->mNumVertices);
-			tagent_channel_ = 4;
-			bitagent_channel_ = 4;
+			tangent_channel_ = 4;
+			bitangent_channel_ = 4;
 		}
 		unsigned int total_color_sets = mesh->GetNumColorChannels();
 		colors_channel_.resize(static_cast<size_t>(total_color_sets));

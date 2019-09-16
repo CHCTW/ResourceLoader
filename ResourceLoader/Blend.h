@@ -69,6 +69,46 @@ namespace Resource
 			ALPHA = 8,
 			ALL = 15
 		};
+		bool isBlendEnable() const
+		{
+			return blend_enable_;
+		}
+		bool isLogicBlendEnable() const
+		{
+			return logic_blend_enable_;
+		}
+		BlendFactor getSourceBlendFactor() const
+		{
+			return src_blend_;
+		}
+		BlendFactor getDestinationBlendFactor() const
+		{
+			return dest_blend_;
+		}
+		BlendOperation getBlendOperation() const
+		{
+			return blend_operation_;
+		}
+		BlendFactor getSourceBlendAlphaFactor() const
+		{
+			return src_blend_alpha_;
+		}
+		BlendFactor getDestinationBlendAlphaFactor() const
+		{
+			return dest_blend_alpha_;
+		}
+		BlendOperation getBlendOperationAlpha() const
+		{
+			return blend_operation_alpha_;
+		}
+		LogicOperation getLogicOperation() const
+		{
+			return logic_operation_;
+		}
+		ColorWrite getRenderTargetWriteMask() const
+		{
+			return render_target_write_mask_;
+		}
 	private:
 		bool loadFromRapidJson(rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>& json);
 		bool blend_enable_ = false;

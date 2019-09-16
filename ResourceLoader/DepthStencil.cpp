@@ -33,15 +33,15 @@ namespace Resource
 		}
 		if (json.HasMember("StencilFailOperation"))
 		{
-			ret &= convertEnum(std::string(json["StencilFailOperation"].GetString()), stencial_fail_operation_);
+			ret &= convertEnum(std::string(json["StencilFailOperation"].GetString()), stencil_fail_operation_);
 		}
 		if (json.HasMember("StencilDepthFailOperation"))
 		{
-			ret &= convertEnum(std::string(json["StencilDepthFailOperation"].GetString()), stencial_depth_fail_operation_);
+			ret &= convertEnum(std::string(json["StencilDepthFailOperation"].GetString()), stencil_depth_fail_operation_);
 		}
 		if (json.HasMember("StencilPassOperation"))
 		{
-			ret &= convertEnum(std::string(json["StencilPassOperation"].GetString()),stencial_pass_operation_);
+			ret &= convertEnum(std::string(json["StencilPassOperation"].GetString()),stencil_pass_operation_);
 		}
 		if (json.HasMember("StencilComparison"))
 		{
