@@ -1,6 +1,8 @@
 #pragma once
 #include <atomic>
 #include <string>
+#include <functional>
+#include <memory>
 namespace Resource
 {
 	enum Type
@@ -56,6 +58,8 @@ namespace Resource
 		{
 			return ready_.load();
 		}
+		void waitForReady();
+		void loadAsync(std::function<void(Resource&)> callback);
 	protected:
 		virtual bool loadResource() = 0;
 		std::string full_path_name_;

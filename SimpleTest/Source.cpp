@@ -25,6 +25,13 @@ int main()
 	Resource::Image image2;
 	
 	Resource::BaseModel<float> model("Assets/Models/sponza.obj");
+
+	model.loadAsync([](Resource::Resource& res) {
+		std::cout << "Load done from async";
+		auto m = static_cast<Resource::BaseModel<float,unsigned int>*>(&res);
+		std::cout << "Has mesh total : " << m->getMeshList().size() << std::endl;
+		});
+	model.waitForReady();
 	Resource::Pipeline pipeline("Assets/Pipelines/pipeline.json");
 	std::vector<std::thread> threads;
 	for (int i = 0; i < 100; ++i)
@@ -49,7 +56,7 @@ int main()
 	}
 	auto image_ptr = manager.GetMutable("sponza.obj", [](std::shared_ptr<Resource::BaseModel<float>> resource) {
 		std::cout << resource->getName() << std::endl; });
-	std::cout << "Stat to wait" << std::endl;
+	std::cout << "Start to wait" << std::endl;
 	manager.waitAllWorkDone();
 	return 0;
 }
